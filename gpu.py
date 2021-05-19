@@ -18,6 +18,14 @@ def in_stock_tuf_3080() -> str:
 
     return result
 
+
+def in_stock_tuf_3080_updated() -> bool:
+
+    try:
+        return not in_stock_tuf_3080() == 'OUT OF STOCK '
+    except:
+        pass
+
 def notifier():
     while True:
         now = datetime.now()
