@@ -46,19 +46,8 @@ def in_stock_ps5_digital() -> str:
     return result
 
 
-def notifier():
-    while True:
-        now = datetime.now()
-        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-        if in_stock_ps5_digital() == 'Coming soon':
-            print('\x1b[0;30;44m' + 'Bestbuy' + '\x1b[0m' + ' PS5 Disc ' + '\x1b[0;30;41m' +
-                  'out of stock' + '\x1b[0m' + ' ' + dt_string)
-        else:
-            print('\x1b[0;30;44m' + 'Bestbuy' + '\x1b[0m' + ' PS5 Disc ' + '\x1b[0;30;42m' +
-                  'in stock' + '\x1b[0m' + ' ' + dt_string)
-        if in_stock_ps5_disc() == 'Coming soon':
-            print('\x1b[0;30;44m' + 'Bestbuy' + '\x1b[0m' + ' PS5 Digital ' + '\x1b[0;30;41m' +
-                  'out of stock' + '\x1b[0m' + ' ' + dt_string)
-        else:
-            print('\x1b[0;30;44m' + 'Bestbuy' + '\x1b[0m' + ' PS5 Digital ' + '\x1b[0;30;42m' +
-                  'in stock' + '\x1b[0m' + ' ' + dt_string)
+def in_stock_ps5_disc_updated() -> bool:
+    try:
+        return not in_stock_ps5_disc() == 'Coming soon'
+    except:
+        pass
