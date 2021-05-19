@@ -35,7 +35,7 @@ def in_stock_checker(link: str) -> List[Union[str, bool]]:
 
 
 def in_stock_list(links: list) -> List[List[Union[str, bool]]]:
-    """Returns whether products are in stock from a list of links of projects."""
+    """Returns whether products are in stock from a list of links of products."""
     output = []
     for link in links:
         output.append(in_stock_checker(link))
