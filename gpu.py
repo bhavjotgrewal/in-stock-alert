@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 from datetime import datetime
+from rich import print
 
 
 def in_stock_tuf_3080() -> str:
@@ -24,11 +25,9 @@ def notifier():
         try:
             if in_stock_tuf_3080() == 'OUT OF STOCK ':
                 print(
-                    '\x1b[0;30;43m' + 'Newegg' + '\x1b[0m' + ' RTX 3080 TUF OC ' + '\x1b[0;30;41m' +
-                    'out of stock' + '\x1b[0m' + ' ' + dt_string)
+                    "[yellow]Newegg[/yellow] RTX 3080 TUF OC [red]out of stock [/red]" + dt_string)
             else:
                 print(
-                    '\x1b[0;30;43m' + 'Newegg' + '\x1b[0m' + ' RTX 3080 TUF OC ' + '\x1b[0;30;42m' +
-                    'in stock' + '\x1b[0m' + ' ' + dt_string)
+                    "[yellow]Newegg[/yellow] RTX 3080 TUF OC [green]in stock [/green]" + dt_string)
         except:
             continue
