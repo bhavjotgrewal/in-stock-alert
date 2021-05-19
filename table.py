@@ -2,8 +2,6 @@ from rich.console import Console
 from rich.live import Live
 from rich.table import Table
 from datetime import datetime
-import gpu
-import consoles
 import pyttsx3
 import newegg
 
@@ -21,7 +19,7 @@ table.add_column("Last Checked", justify="right")
 
 list_3060_newegg = newegg.load_data('newegg_products.txt')
 
-with Live(table, refresh_per_second=1, vertical_overflow="visible"):
+with Live(table, refresh_per_second=2, vertical_overflow="visible"):
     while True:
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
