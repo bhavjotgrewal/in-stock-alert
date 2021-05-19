@@ -21,9 +21,14 @@ def notifier():
     while True:
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-        if in_stock_tuf_3080() == 'OUT OF STOCK ':
-            print('\x1b[0;30;43m' + 'Newegg' + '\x1b[0m' + ' RTX 3080 TUF OC ' + '\x1b[0;30;41m' +
-                  'out of stock' + '\x1b[0m' + ' ' + dt_string)
-        else:
-            print('\x1b[0;30;43m' + 'Newegg' + '\x1b[0m' + ' RTX 3080 TUF OC ' + '\x1b[0;30;42m' +
-                  'in stock' + '\x1b[0m' + ' ' + dt_string)
+        try:
+            if in_stock_tuf_3080() == 'OUT OF STOCK ':
+                print(
+                    '\x1b[0;30;43m' + 'Newegg' + '\x1b[0m' + ' RTX 3080 TUF OC ' + '\x1b[0;30;41m' +
+                    'out of stock' + '\x1b[0m' + ' ' + dt_string)
+            else:
+                print(
+                    '\x1b[0;30;43m' + 'Newegg' + '\x1b[0m' + ' RTX 3080 TUF OC ' + '\x1b[0;30;42m' +
+                    'in stock' + '\x1b[0m' + ' ' + dt_string)
+        except:
+            continue
