@@ -1,3 +1,4 @@
 rich
 pyttsx3
 beautifulsoup4
+requests
