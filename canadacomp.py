@@ -24,7 +24,7 @@ def in_stock_checker(link: str) -> List[Union[str, bool]]:
 
         soup = BeautifulSoup(r.text, 'lxml')
 
-        name = soup.find('title').text[:-12]
+        name = soup.find('title').text
 
         if 'Not Available Online' in soup.find('div', {'class': 'pi-prod-availability'}).text:
             in_stock = False
