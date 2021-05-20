@@ -20,7 +20,12 @@ def in_stock_checker(link: str) -> List[Union[str, bool]]:
 
         r = requests.get(link)
 
-        soup = BeautifulSoup(r.content, 'lxml')
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, '
+                          'like Gecko) Chrome/57.0.2987.133 Safari/537.36'}
+        r = requests.get(link, headers=headers)
+
+        soup = BeautifulSoup(r.text, 'lxml')
 
         name = soup.find('title').text[:-12]
 
@@ -31,6 +36,7 @@ def in_stock_checker(link: str) -> List[Union[str, bool]]:
         return [name, in_stock]
 
     except:
+        print('connection blocked')
         pass
 
 
