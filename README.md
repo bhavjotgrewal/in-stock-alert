@@ -7,7 +7,7 @@ During the current unprecedented situation, finding stock for GPUs, some CPUs, a
 
 # How does it work? #
 
-Scraping sites is challenging due to anti-bot protection. However, it can be done using proxies. This ensures that you do not send too many requests from a single address, and thus are not blocked. This tool uses proxies that the user provides in order to run it' scripts. Beautiful soup is used along with multithreading to increase the scrape speed. Results are displayed using Rich in a seperate window. 
+Proxies are used that the user provides in order to run it's scripts. Beautiful soup is used along with multithreading to increase the scrape speed. Results are displayed using Rich in a seperate window. 
 
 # How do I run it? #
 
