@@ -3,13 +3,6 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def load_data(file: str) -> List[str]:
-    """Generates a list of links from a .txt file."""
-    with open(file) as f:
-        content = [line.rstrip() for line in f]
-    return content
-
-
 def in_stock_checker(link: str) -> List[Union[str, bool]]:
     """A general function that takes a link and determines whether a product is in stock at Newegg.
 
@@ -36,11 +29,3 @@ def in_stock_checker(link: str) -> List[Union[str, bool]]:
     except:
         print('connection blocked')
         pass
-
-
-def in_stock_list(links: list) -> List[List[Union[str, bool]]]:
-    """Returns whether products are in stock from a list of links of products."""
-    output = []
-    for link in links:
-        output.append(in_stock_checker(link))
-    return output
